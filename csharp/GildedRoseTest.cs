@@ -7,12 +7,18 @@ namespace csharp
     public class GildedRoseTest
     {
         [Test]
-        public void foo()
+        public void UpdateQuility_ShouldNotChangeItemName()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "foo", SellIn = 0, Quality = 0 } };
-            GildedRose app = new GildedRose(Items);
-            app.UpdateQuality();
-            Assert.AreEqual("fixme", Items[0].Name);
+            // Arrange            
+            var anyItem = new Item { Name = "AnyName", SellIn = 0, Quality = 0 };
+            var items = new List<Item> { anyItem };
+            var gildedRose = new GildedRose(items);
+            
+            // Act
+            gildedRose.UpdateQuality();
+            
+            // Assert
+            Assert.AreEqual("AnyName", anyItem.Name);
         }
     }
 }
