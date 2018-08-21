@@ -24,15 +24,22 @@ namespace csharp
         [Test]
         [TestCase("AnyName", 5, 4, 3, 2)]
         [TestCase("AnyName", 51, 50, 7, 6)]
+        [TestCase("AnyName", 51, 49, -5, -6)]
         [TestCase("Sulfuras, Hand of Ragnaros", 51, 51, 0, 0)]
         [TestCase("Sulfuras, Hand of Ragnaros", 0, 0, 0, 0)]
         [TestCase("Sulfuras, Hand of Ragnaros", 5, 5, 0, 0)]
+        [TestCase("Sulfuras, Hand of Ragnaros", 5, 5, -5, -5)]
         [TestCase("Aged Brie", 5, 6, 5, 4)]
         [TestCase("Aged Brie", 5, 6, 11, 10)]
         [TestCase("Aged Brie", 0, 1, 5, 4)]
         [TestCase("Aged Brie", 50, 50, 5, 4)]
+        [TestCase("Aged Brie", 5, 6, 5, 4)]
+        [TestCase("Aged Brie", 0, 2, -5, -6)]
         [TestCase("Backstage passes to a TAFKAL80ETC concert", 5, 7, 7, 6)]
         [TestCase("Backstage passes to a TAFKAL80ETC concert", 0, 2, 7, 6)]
+        [TestCase("Backstage passes to a TAFKAL80ETC concert", 0, 3, 5, 4)]
+        [TestCase("Backstage passes to a TAFKAL80ETC concert", 51, 51, 5, 4)]
+        [TestCase("Backstage passes to a TAFKAL80ETC concert", 0, 0, 0, -1)]
         public void UpdateQuility_ShouldSetExpectedQualityAndCellIn(string name, int quality, int expectedQuality, int sellIn, int expectedSellIn)
         {
             // Arrange            
