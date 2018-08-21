@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 using System.Collections.Generic;
 
 namespace csharp
@@ -6,6 +7,16 @@ namespace csharp
     [TestFixture]
     public class GildedRoseTest
     {
+        [Test]
+        public void Ctor_WhenItemsIsNull_ShouldThrowArgumentNullException()
+        {
+            // Arrange and Act
+            TestDelegate act = () => new GildedRose(null);
+
+            // Assert
+            Assert.Throws<ArgumentNullException>(act);
+        }
+
         [Test]
         public void UpdateQuility_ShouldNotChangeItemName()
         {
