@@ -1,6 +1,7 @@
-﻿using NUnit.Framework;
+﻿using csharp;
+using NUnit.Framework;
 
-namespace csharp
+namespace Tests
 {
     [TestFixture]
     public class ItemsTests
